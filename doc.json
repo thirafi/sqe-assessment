@@ -1,0 +1,941 @@
+{
+	"info": {
+		"_postman_id": "9a5029ac-6e15-47b4-bc55-2bedacc3adfb",
+		"name": "Bank Ina Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3709751"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Login using callback",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/callback?code=4%2F0AfJohXmfbDi7AdYOg9up16_AZOMzVCS_RRm-jnRIqN4n-ds9unr02k22eX7m1wm8inNPbg&state=pseudo-random",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"callback"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "4%2F0AfJohXmfbDi7AdYOg9up16_AZOMzVCS_RRm-jnRIqN4n-ds9unr02k22eX7m1wm8inNPbg"
+								},
+								{
+									"key": "state",
+									"value": "pseudo-random"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[SUCCESS] Get list users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 12:21:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "220"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"users\": [\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2023-10-12T13:25:50.585+07:00\",\n            \"UpdatedAt\": \"2023-10-12T13:25:50.585+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Rafi Aufar\",\n            \"email\": \"mlinkaja111@gmail.com\",\n            \"Token\": \"\",\n            \"Tasks\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update user by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{           \n            \"name\": \"Rafi Aufar 123\"\n}\n           ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[SUCCESS] Update user by ID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{           \n            \"name\": \"Rafi Aufar 123\"\n}\n           ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 12:28:14 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success update user\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get user by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[ERROR 500] Get users by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 12:31:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Error to get user\",\n    \"Code\": 500,\n    \"Err\": {},\n    \"Data\": null\n}"
+						},
+						{
+							"name": "[ERROR 404] User Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 12:36:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"User not found\",\n    \"Code\": 404,\n    \"Err\": {},\n    \"Data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete user by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[SUCCESS] Delete user by ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 12:26:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success delete user\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "AccessToken",
+								"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Test 1\",\n    \"description\": \"Tell\",\n    \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tasks",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[SUCCESS] Create Task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "AccessToken",
+										"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Test 1\",\n    \"description\": \"Tell\",\n    \"status\": \"active\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/tasks",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:18:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "223"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success create new task\",\n    \"task\": {\n        \"ID\": 1,\n        \"CreatedAt\": \"2023-10-12T21:18:36.18+07:00\",\n        \"UpdatedAt\": \"2023-10-12T21:18:36.18+07:00\",\n        \"DeletedAt\": null,\n        \"UserID\": 2,\n        \"title\": \"Test 1\",\n        \"description\": \"Tell\",\n        \"status\": \"active\"\n    }\n}"
+						},
+						{
+							"name": "[Error cannot access] Create Task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "AccessToken",
+										"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Test 1\",\n    \"description\": \"Tell\",\n    \"status\": \"active\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/tasks",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:20:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"No Authorization header provided\",\n    \"Code\": 403,\n    \"Err\": null,\n    \"Data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get list Tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "AccessToken",
+								"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/tasks",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[ERROR Cannot Access] Get list Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "AccessToken",
+										"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/tasks",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:19:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"No Authorization header provided\",\n    \"Code\": 403,\n    \"Err\": null,\n    \"Data\": null\n}"
+						},
+						{
+							"name": "[SUCCESS] Get list Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "AccessToken",
+										"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/tasks",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:21:13 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "209"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"tasks\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2023-10-12T21:18:36.18+07:00\",\n            \"UpdatedAt\": \"2023-10-12T21:18:36.18+07:00\",\n            \"DeletedAt\": null,\n            \"UserID\": 2,\n            \"title\": \"Test 1\",\n            \"description\": \"Tell\",\n            \"status\": \"active\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get task by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "AccessToken",
+								"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/tasks/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"1"
+							],
+							"query": [
+								{
+									"key": "AccessToken",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Error not found] Get task by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "AccessToken",
+										"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/tasks/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks",
+										"2"
+									],
+									"query": [
+										{
+											"key": "AccessToken",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:27:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Task not found\",\n    \"Code\": 404,\n    \"Err\": {},\n    \"Data\": null\n}"
+						},
+						{
+							"name": "[Success] Get task by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "AccessToken",
+										"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/tasks/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks",
+										"1"
+									],
+									"query": [
+										{
+											"key": "AccessToken",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:27:25 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "207"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"tasks\": {\n        \"ID\": 1,\n        \"CreatedAt\": \"2023-10-12T21:18:36.18+07:00\",\n        \"UpdatedAt\": \"2023-10-12T21:18:36.18+07:00\",\n        \"DeletedAt\": null,\n        \"UserID\": 2,\n        \"title\": \"Test 1\",\n        \"description\": \"Tell\",\n        \"status\": \"active\"\n    }\n}"
+						},
+						{
+							"name": "[Error UnAuthorized]Get task by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "AccessToken",
+										"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/tasks/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks",
+										"1"
+									],
+									"query": [
+										{
+											"key": "AccessToken",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:27:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"No Authorization header provided\",\n    \"Code\": 403,\n    \"Err\": null,\n    \"Data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update task by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{           \n            \"name\": \"Rafi Aufar 123\"\n}\n           ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/task/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"task",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success] Update task by ID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "AccessToken",
+										"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{           \n            \"title\": \"Test 123\"\n}\n           ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/tasks/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:29:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success update task\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete task by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tasks/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Error UnAuthorized] Delete user by ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/tasks/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:29:46 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"No Authorization header provided\",\n    \"Code\": 403,\n    \"Err\": null,\n    \"Data\": null\n}"
+						},
+						{
+							"name": "[SUCCESS] Delete user by ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "AccessToken",
+										"value": "ya29.a0AfB_byDUQpJ-c3e_c2wj4XQ21BUPTiHSJ1-Z0HMc96LkxiPw3M4siYBab_0WubsXZVRUMAZtwWwChH2mq8Bni0cN8Meups1jga0LHuplVW9WUVz-TNFQEwkv6MsxQLEr80UrvxyVxrj5uUX0_wLNT6kmTDKEosSE5DeKaCgYKATUSARMSFQGOcNnCFLGi9S0hkmhq7Jg8tqyCGw0171",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/tasks/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2023 14:30:42 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success delete task\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
